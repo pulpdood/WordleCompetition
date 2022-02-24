@@ -25,7 +25,7 @@ class Competition:
     def load_competitors(self):
         competitors = []
         for file in os.listdir(self.competitor_directory):
-            if file.endswith(".py"):
+            if file.endswith("pulpdoodAI.py"):
                 module = importlib.import_module(self.competitor_directory + "." + file[:-3])
                 for name, obj in inspect.getmembers(module):
                     if inspect.isclass(obj) and issubclass(obj, WordleAI) and not inspect.isabstract(obj):
